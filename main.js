@@ -25,6 +25,9 @@ const main = async () => {
                 intents: clientIntents
             });
             this.client.login(process.env.LOCAL_AUTH ? process.env.LOCAL_AUTH : settings.client_secret).catch(console.error);
+            this.client.on("message", message => {
+                if (message.author.id === "921987621511643170") message.suppressEmbeds(true)
+            })
             setInterval(async() => {
                 await this.send_message().catch(k => console.log(k))
             },parseInt(settings.message_frequency) * 1000)
