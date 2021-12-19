@@ -17,10 +17,10 @@ const main = async () => {
             if(!settings?.channel_id?.length > 0){console.log("Missing Channel ID Setting");return}
             this.max_strings = strings.data.length
             this.client = new Client({
-                //ws: {
-                    //intents: clientIntents
-                //},
-                //intents: clientIntents
+                ws: {
+                    intents: clientIntents
+                },
+                intents: clientIntents
             });
             this.client.login(process.env.LOCAL_AUTH ? process.env.LOCAL_AUTH : settings.client_secret).catch(console.error);
             setInterval(async() => {
