@@ -12,7 +12,7 @@ const main = async () => {
         }
         async boot(){
             if(!strings?.data?.length){console.log("No Message Strings!");return}
-            if(!settings?.client_secret?.length > 0){console.log("Missing Client Secret");return}
+            if(!settings?.client_secret?.length > 0 && !process.env.LOCAL_AUTH){console.log("Missing Client Secret");return}
             if(!settings?.message_frequency?.length > 0){console.log("Missing Message Frequency Setting");return}
             if(!settings?.channel_id?.length > 0){console.log("Missing Channel ID Setting");return}
             this.max_strings = strings.data.length
