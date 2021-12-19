@@ -32,6 +32,7 @@ const main = async () => {
                 await this.send_message().catch(k => console.log(k))
             },parseInt(settings.message_frequency) * 1000)
         }
+
         async send_message(){
             //const guild_id = 688889842032967694
             //const guild = await this.client.guilds.cache.get(this.guild_id)
