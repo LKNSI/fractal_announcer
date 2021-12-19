@@ -36,13 +36,18 @@ const main = async () => {
         async send_message(){
             //const guild_id = 688889842032967694
             //const guild = await this.client.guilds.cache.get(this.guild_id)
-            if(this.current_string === (this.max_strings - 1)){
+            /*if(this.current_string === (this.max_strings - 1)){
                 this.current_string = 0
                 this.client.channels.fetch(settings.channel_id).then(channel => channel.send(strings.data[this.current_string]))
             }else{
                 this.client.channels.fetch(settings.channel_id).then(channel => channel.send(strings.data[this.current_string]))
                 this.current_string++
-            }
+            }*/
+            this.client.channels.fetch(settings.channel_id).then(channel => channel.send(`"Hi everyone. Welcome to the Fractal Discord! If you are new here, please visit 👉 #start-here to get started and to assign your roles. 
+Visit 📜 <#921997638591733760> to learn more about the project, airdrop, launch, and invitations. 
+To catch up within the last 24-48 hours, check out our 📣 <#921997616055722004> !
+To learn more about the specifics of the project, visit our Medium article: Introducing Fractal - <https://fractal.medium.com/introducing-fractal-98a8162a0a6f>"`)
+            
         }
     }
     var instance = new fractal_announcer()
