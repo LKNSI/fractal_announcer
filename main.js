@@ -7,7 +7,7 @@ const main = async () => {
     class fractal_announcer {
         constructor(){
             this.client;
-            this.current_string;
+            this.current_string = 0;
             this.max_strings;
         }
         async boot(){
