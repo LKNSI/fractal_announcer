@@ -1,5 +1,6 @@
 {
     "client_secret": "",
-    "message_frequency": "60",
+    "message_frequency": "30",
+    "channel_id": "855116155512422433",
     "guild_id": "855116154954711072"
 }

@@ -15,6 +15,7 @@ const main = async () => {
             if(!strings?.data?.length){console.log("No Message Strings!");return}
             if(!settings?.client_secret?.length > 0 && !process.env.LOCAL_AUTH){console.log("Missing Client Secret");return}
             if(!settings?.message_frequency?.length > 0){console.log("Missing Message Frequency Setting");return}
+            if(!settings?.channel_id?.length > 0){console.log("Missing Channel ID Setting");return}
             this.max_strings = strings.data.length
             this.guild_id = settings.guild_id
             this.client = new Client({
@@ -29,12 +30,13 @@ const main = async () => {
             },parseInt(settings.message_frequency) * 1000)
         }
         async send_message(){
-            var guild = await this.client.guilds.cache.get(this.guild_id)
+            //const guild_id = 688889842032967694
+            //const guild = await this.client.guilds.cache.get(this.guild_id)
             if(this.current_string === (this.max_strings - 1)){
                 this.current_string = 0
-                guild.channels.cache.find(i => i.name === "general").send(strings.data[this.current_string])
+                this.client.channels.fetch(settings.channel_id).then(channel => channel.send(strings.data[this.current_string]))
             }else{
-                guild.channels.cache.find(i => i.name === "general").send(strings.data[this.current_string])
+                this.client.channels.fetch(settings.channel_id).then(channel => channel.send(strings.data[this.current_string]))
                 this.current_string++
             }
         }
