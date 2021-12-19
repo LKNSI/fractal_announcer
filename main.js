@@ -43,9 +43,12 @@ const main = async () => {
                 this.client.channels.fetch(settings.channel_id).then(channel => channel.send(strings.data[this.current_string]))
                 this.current_string++
             }*/
-            this.client.channels.fetch(settings.channel_id).then(channel => channel.send(`"Hi everyone. Welcome to the Fractal Discord! If you are new here, please visit 👉 #start-here to get started and to assign your roles. 
+            this.client.channels.fetch(settings.channel_id).then(channel => channel.send(`Hi everyone. Welcome to the Fractal Discord! If you are new here, please visit 👉 #start-here to get started and to assign your roles. 
+
 Visit 📜 <#921997638591733760> to learn more about the project, airdrop, launch, and invitations. 
-To catch up within the last 24-48 hours, check out our 📣 <#921997616055722004> !
+
+To catch up within the last 24-48 hours, check out our 📣 <#921997616055722004>!
+
 To learn more about the specifics of the project, visit our Medium article: Introducing Fractal - <https://fractal.medium.com/introducing-fractal-98a8162a0a6f>"`))
             
         }
