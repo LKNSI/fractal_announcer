@@ -3,7 +3,7 @@ const main = async () => {
     const strings = require('./strings.json')
     const { Client, Intents } = require('discord.js');
     const clientIntents = new Intents();
-    clientIntents.add("GUILDS","GUILD_MESSAGES","GUILD_PRESENCES");
+    //clientIntents.add("GUILDS","GUILD_MESSAGES","GUILD_PRESENCES");
     class fractal_announcer {
         constructor(){
             this.client;
@@ -17,10 +17,10 @@ const main = async () => {
             if(!settings?.channel_id?.length > 0){console.log("Missing Channel ID Setting");return}
             this.max_strings = strings.data.length
             this.client = new Client({
-                ws: {
-                    intents: clientIntents
-                },
-                intents: clientIntents
+                //ws: {
+                    //intents: clientIntents
+                //},
+                //intents: clientIntents
             });
             this.client.login(process.env.LOCAL_AUTH ? process.env.LOCAL_AUTH : settings.client_secret).catch(console.error);
             setInterval(async() => {
