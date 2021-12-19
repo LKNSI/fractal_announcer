@@ -51,7 +51,7 @@ To catch up within the last 24-48 hours, check out our 📣 <#921997616055722004
 
 To learn more about the specifics of the project, visit our Medium article: Introducing Fractal - <https://fractal.medium.com/introducing-fractal-98a8162a0a6f>"`))
             
-        }
+        } 
     }
     var instance = new fractal_announcer()
     await instance.boot()
